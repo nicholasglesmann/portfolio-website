@@ -24,7 +24,7 @@ class MidnightSky {
             width: window.innerWidth,
             height: window.innerHeight,
             velocity: 0.8,
-            length: screen.width / 10 < 100 ? screen.width / 10 : 100, //length is the number of stars
+            length: screen.width / 10 < 150 ? screen.width / 7 : 100, //length is the number of stars
             distance: screen.width / 10 > 120 ? screen.width / 10 : 120,
             radius: 120,
             stars: []

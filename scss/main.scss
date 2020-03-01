@@ -1,11 +1,84 @@
-$primary-color: #444;
-
-body {
-    background: $primary-color;
-}
+@import 'variables';
+@import 'mixins';
+@import 'functions';
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    @include background;
+    background: $primary-color;
+    color: #fff;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+
+    &.lg-heading {
+        font-size: 6rem;
+    }
+
+    &.sm-heading {
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem;
+        background: rgba(lighten($primary-color, 2), 0.5);
+    }
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+main {
+    padding: 4rem;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+
+    .icons {
+        display: inline-block;
+        margin-top: 1rem;
+        pointer-events: all;
+
+        a {
+            padding: 0.4rem;
+
+            &:hover {
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
+    }
+
+    &#home {
+        overflow: hidden;
+
+        h1 {
+            display: inline-block;
+            margin-top: 20vh;
+        }
+
+        h2 {
+            display: inline-block;
+        }
+    }
+}
+
+
