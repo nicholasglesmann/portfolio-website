@@ -1,3 +1,25 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin-bottom: 5px;
+    background: #fff;
+    transition: all 0.5s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(135deg) translate(-6px, 6px); }
+
 * {
   margin: 0;
   padding: 0;
@@ -40,8 +62,8 @@ a {
 
 header {
   position: fixed;
-  z-index: 2;
-  width: 100%; }
+  width: 100%;
+  pointer-events: all; }
 
 .text-secondary {
   color: #ffa372; }
@@ -49,8 +71,7 @@ header {
 main {
   padding: 4rem;
   height: 100%;
-  pointer-events: none;
-  z-index: 5; }
+  pointer-events: none; }
   main .icons {
     display: inline-block;
     margin-top: 1rem;
