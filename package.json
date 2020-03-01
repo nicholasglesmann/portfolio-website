@@ -1,0 +1,22 @@
+{
+  "name": "portfolio_website",
+  "version": "1.0.0",
+  "description": "A responsive portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/src/css --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholasglesmann/portfolio-website.git"
+  },
+  "author": "Nicholas Glesmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicholasglesmann/portfolio-website/issues"
+  },
+  "homepage": "https://github.com/nicholasglesmann/portfolio-website#readme",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
