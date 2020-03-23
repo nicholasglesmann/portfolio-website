@@ -1,14 +1,14 @@
-
 class MidnightSky {
 
     constructor() {
-        //reference to the canvas and context
         this.$canvas = document.getElementById("canvas");
         this.$context = this.$canvas.getContext("2d");
 
-        //default star object
-        this.defaults = {
-            star: {
+        this.numStars = this.calculateNumStars(screen.width);
+        this.distance = this.calculateDistance(screen.width);
+
+        this.defaultStar = {
+            starProps: {
                 color: 'rgba(255, 255, 255, .5)',
                 width: 1,
                 randomWidth: true
@@ -24,13 +24,13 @@ class MidnightSky {
             width: window.innerWidth,
             height: window.innerHeight,
             velocity: 0.8,
-            length: screen.width / 10 < 150 ? screen.width / 7 : 100, //length is the number of stars
-            distance: screen.width / 10 > 120 ? screen.width / 10 : 120,
+            numStars: this.numStars,
+            distance: this.distance,
             radius: 120,
             stars: []
         }
         //copies the default object to the config object
-        this.config = JSON.parse(JSON.stringify(this.defaults));
+        this.config = JSON.parse(JSON.stringify(this.defaultStar));
 
         /////////////Method Bindings//////////////////
         this.setCanvas = this.setCanvas.bind(this);
@@ -59,6 +59,22 @@ class MidnightSky {
         this.animation = window.setInterval(this.animateStars, 16.666666);
     }
 
+    calculateNumStars(width) {
+        if(width <= 500) // Smartphones
+            return 35;
+        if(width <= 768) // Tablets
+            return 75;
+        return 100; // Computers
+    }
+
+    calculateDistance(width) {
+        if(width <= 500) // Smartphones
+            return 100;
+        if(width <= 768) // Tablets
+            return 150;
+        return 200; // Computers
+    }
+
     addEventListener() {
         this.$canvas.addEventListener("mousemove", e => {this.highlight(e)});
     }
@@ -70,9 +86,9 @@ class MidnightSky {
     }
 
     setContext() {
-        this.$context.strokeStyle = this.config.star.color;
-        this.$context.fillStyle = this.config.star.color;
-        this.$context.lineWidth = this.config.star.width;
+        this.$context.strokeStyle = this.config.starProps.color;
+        this.$context.fillStyle = this.config.starProps.color;
+        this.$context.lineWidth = this.config.starProps.width;
     }
 
     setInitialPosition() {
@@ -81,8 +97,8 @@ class MidnightSky {
     }
 
     createStar() {
-        //creates a new star object using this.defaults as a template
-        let newStar = JSON.parse(JSON.stringify(this.defaults));
+        //creates a new star object using this.defaultStar as a template
+        let newStar = JSON.parse(JSON.stringify(this.defaultStar));
 
         //sets random start position based on window height and width
         newStar.position.x = Math.floor((Math.random() * (this.config.width - 1)));
@@ -100,16 +116,16 @@ class MidnightSky {
         newStar.radius = Math.random() * 10;
 
         //sets a random width (1 or 2)
-        newStar.star.width = Math.ceil(Math.random() * 10) / 10;
+        newStar.starProps.width = Math.ceil(Math.random() * 10) / 10;
        
         //sets a random alpha
         let alpha = (Math.floor((Math.random() * 100) + 1)) / 200;
 
         //creates a new property to store the alpha
-        newStar.star.alpha = alpha;
+        newStar.starProps.alpha = alpha;
 
         //sets the star starting color based on the alpha
-        newStar.star.color = "rgba(255, 255, 255, " + alpha + ")";
+        newStar.starProps.color = "rgba(255, 255, 255, " + alpha + ")";
         
         //randomly sets the fade in value to true or false
         if (Math.random() > .5) {
@@ -123,14 +139,14 @@ class MidnightSky {
 
     createStars() {
         //creates all the stars
-        for(let i = 0; i <= this.config.length; i++) {
+        for(let i = 0; i <= this.config.numStars; i++) {
             this.config.stars.push(this.createStar());
         }
     }
 
     drawStar(star) {
         // gets the current alpha for the star
-        let alpha = star.star.alpha;
+        let alpha = star.starProps.alpha;
 
         //changes the fade in value if necessary
         if(alpha <= .1) {
@@ -151,11 +167,11 @@ class MidnightSky {
         this.$context.fillStyle = "rgba(255, 255, 255, " + alpha + ")";
 
         //updates the alpha in the star
-        star.star.alpha = alpha;
+        star.starProps.alpha = alpha;
         
         //draws the star
-        this.$context.strokeRect(star.position.x, star.position.y, star.star.width, star.star.width);
-        this.$context.fillRect(star.position.x, star.position.y, star.star.width, star.star.width);
+        this.$context.strokeRect(star.position.x, star.position.y, star.starProps.width, star.starProps.width);
+        this.$context.fillRect(star.position.x, star.position.y, star.starProps.width, star.starProps.width);
     }
 
     drawStars() {
@@ -163,7 +179,7 @@ class MidnightSky {
         this.$context.clearRect(0, 0, this.config.width, this.config.height);
 
         //loops through the star array and draws every star
-        for(let i = 0; i <= this.config.length; i++) {
+        for(let i = 0; i <= this.config.numStars; i++) {
 
             this.drawStar(this.config.stars[i]);
         }
@@ -183,7 +199,7 @@ class MidnightSky {
 
     moveStars() {
         //loop through the star array and move every star
-        for(let i = 0; i <= this.config.length; i++) {
+        for(let i = 0; i <= this.config.numStars; i++) {
             this.moveStar(this.config.stars[i]);
         }
     }
@@ -203,10 +219,10 @@ class MidnightSky {
 
     drawLines() {
         //compare all combinations of two stars
-        for (let i = 0; i < this.config.length; i++) {
+        for (let i = 0; i < this.config.numStars; i++) {
 
             //the inner loop starts at i + 1 to eliminate any repeat star comparisions
-            for (let j = i + 1; j < this.config.length; j++) {
+            for (let j = i + 1; j < this.config.numStars; j++) {
 
                 //gets two stars
                 let iStar = this.config.stars[i];
@@ -221,7 +237,7 @@ class MidnightSky {
                         Math.abs(iStar.position.y - this.config.position.y) < this.config.radius) {
                         
                         //gets alpha for the the current star
-                        let alpha = this.config.stars[j].star.alpha;
+                        let alpha = this.config.stars[j].starProps.alpha;
 
                         //updates the stroke and fill style with the current star's alpha
                         this.$context.strokeStyle = "rgba(255, 255, 255, " + alpha + ")";
