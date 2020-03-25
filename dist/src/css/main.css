@@ -95,7 +95,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
-    background: url(../../img/code-dark.jpg);
+    background: url(../../img/code-dark-final.jpg);
     background-attachment: fixed;
     background-size: cover;
     pointer-events: none;
