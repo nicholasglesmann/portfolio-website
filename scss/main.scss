@@ -33,7 +33,7 @@ h1, h2, h3 {
 }
 
 a {
-    color: #fff;
+    color: $light-color;
     text-decoration: none;
 }
 
@@ -131,17 +131,95 @@ main {
 .projects {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0.7rem;
+    gap: 1.5rem;
 
 
     img {
         width: 100%;
-        border: 3px #fff solid;
+        border: 2px $secondary-color solid;
+        border-radius: 4px;
+        opacity: 0.8;
+        @include easeOut;
 
         &:hover {
-            opacity: 0.5;
-            border-color: $secondary-color;
-            @include easeOut;
+            opacity: 1;
+            border-color: $light-color;
+        }
+    }
+}
+
+.item {
+    background-color: $third-color;
+    padding: 1rem;
+    border-radius: 4px;
+
+    .heading-wrap {
+        background-color: $primary-color;
+        padding: .5rem;
+        margin-bottom: 1rem;
+        border-radius: 4px;
+
+        .project-heading {
+            color: $light-color;
+            text-align: center;
+            font-weight: 500;
+            font-size: 2rem;
+        }
+    }
+
+    .description-wrap {
+        padding: .25rem .5rem;
+
+        .description-heading {
+            font-weight: 500;
+            font-size: 1.4rem;
+            margin: .75rem 0;
+        }
+    }
+
+    hr {
+        margin: 1rem 0;
+        border: .25px $light-color solid;
+    }
+
+    .technology-wrap {
+
+        background-color: $secondary-color;
+        padding: .25rem .25rem;
+        margin: 1.5rem 0;
+        border-radius: 4px;
+    
+        .technology-icons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            .icon-wrap {
+                display: flex;
+                margin: .75rem 1.5rem;
+                align-items: center;
+
+                i {
+                    font-size: 1.5rem;
+                    margin-right: .75rem;
+                }
+
+                img {
+                    width: 22px;
+                    border: none;
+                    border-radius: 0;
+                    opacity: 1;
+                    margin-right: .75rem;
+                }
+
+                .dotnet-logo {
+                    width: 30px;
+                }
+
+                img ~ span {
+                    margin: auto 0;
+                }
+
+            }
         }
     }
 }
@@ -156,7 +234,7 @@ main {
 
     div {
         font-size: 2rem;
-        border: 3px #fff solid;
+        border: 3px $light-color solid;
         padding: 1.5rem 2.5rem;
         margin-bottom: 3rem;
         @include easeOut;
@@ -179,6 +257,11 @@ main {
     padding: 0.5rem 1rem;
     border: 0;
     margin-bottom: 0.3rem;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    @include easeOut;
 
     &:hover {
         background-color: $secondary-color;
@@ -188,21 +271,29 @@ main {
 
 .btn-dark {
     @extend .btn;
-    background: darken($primary-color, 50);
-    color: #fff;
+    background: $primary-color;
+    color: $light-color;
 }
 
 .btn-light {
     @extend .btn;
-    background: lighten($primary-color, 50);
-    color: #fff;
+    background: $light-color;
+    color: $primary-color;
+}
+
+.btn-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: center;
 }
 
 #main-footer {
     text-align: center;
     padding: 1rem;
-    background: darken($primary-color, 10);
-    color: set-text-color($primary-color);
+    background: $third-color;
+    color: set-text-color($third-color);
     height: 60px;
 }
 

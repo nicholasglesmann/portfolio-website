@@ -4,17 +4,17 @@ class MidnightSky {
         this.$canvas = document.getElementById("canvas");
         this.$context = this.$canvas.getContext("2d");
 
-        this.numStars = this.calculateNumStars(screen.width);
-        this.distance = this.calculateDistance(screen.width);
+        this.numStars = this.calculateNumStars(window.innerWidth);
+        this.distance = this.calculateDistance(window.innerWidth);
 
         this.defaultStar = {
             starProps: {
-                color: 'rgba(255, 255, 255, .5)',
+                color: 'rgba(238, 238, 238, .5)',
                 width: 1,
                 randomWidth: true
             },
             line: {
-                color: 'rgba(255, 255, 255, .5)',
+                color: 'rgba(238, 238, 238, .5)',
                 width: 0.2
             },
             position: {
@@ -125,7 +125,7 @@ class MidnightSky {
         newStar.starProps.alpha = alpha;
 
         //sets the star starting color based on the alpha
-        newStar.starProps.color = "rgba(255, 255, 255, " + alpha + ")";
+        newStar.starProps.color = "rgba(238, 238, 238, " + alpha + ")";
         
         //randomly sets the fade in value to true or false
         if (Math.random() > .5) {
@@ -163,8 +163,8 @@ class MidnightSky {
         }
 
         //sets the new draw style to updated alpha
-        this.$context.strokeStyle = "rgba(255, 255, 255, " + alpha + ")";
-        this.$context.fillStyle = "rgba(255, 255, 255, " + alpha + ")";
+        this.$context.strokeStyle = "rgba(238, 238, 238, " + alpha + ")";
+        this.$context.fillStyle = "rgba(238, 238, 238, " + alpha + ")";
 
         //updates the alpha in the star
         star.starProps.alpha = alpha;
@@ -240,8 +240,8 @@ class MidnightSky {
                         let alpha = this.config.stars[j].starProps.alpha;
 
                         //updates the stroke and fill style with the current star's alpha
-                        this.$context.strokeStyle = "rgba(255, 255, 255, " + alpha + ")";
-                        this.$context.fillStyle = "rgba(255, 255, 255, " + alpha + ")";
+                        this.$context.strokeStyle = "rgba(238, 238, 238, " + alpha + ")";
+                        this.$context.fillStyle = "rgba(238, 238, 238, " + alpha + ")";
 
                         //draws line
                         this.$context.beginPath();
