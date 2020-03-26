@@ -16,6 +16,7 @@ body {
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
+    overflow: hidden;
 }
 
 h1, h2, h3 {
@@ -26,7 +27,8 @@ h1, h2, h3 {
     }
 
     &.sm-heading {
-        margin-bottom: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
         padding: 0.2rem 1rem;
         background: rgba(lighten($primary-color, 2), 0.5);
     }
@@ -58,8 +60,9 @@ header {
 }
 
 main {
-    padding: 4rem;
-    min-height: calc(100vh - 60px); // 60px is height of footer
+    padding: .5rem 4rem;
+    min-height: 100vh;
+    // min-height: calc(100vh - 60px); // 60px is height of footer
 
     .icons {
         display: inline-block;
@@ -128,101 +131,119 @@ main {
 }
 
 // Work and Projects
-.projects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+#work {
+    // position: relative;
+    // z-index: -1;
 
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
 
-    img {
-        width: 100%;
-        border: 2px $secondary-color solid;
-        border-radius: 4px;
-        opacity: 0.8;
-        @include easeOut;
+        .item {
 
-        &:hover {
-            opacity: 1;
-            border-color: $light-color;
-        }
-    }
-}
+            background-color: $third-color;
+            padding: 1rem;
+            border-radius: 4px;
+        
+            .heading-wrap {
+                background-color: $primary-color;
+                padding: 0 0 .25rem 0;
+                margin-bottom: 1rem;
+                border-radius: 4px;
+        
+                .project-heading {
+                    color: #fff;
+                    text-align: center;
+                    font-weight: 500;
+                    font-size: 2rem;
+                }
+            }
 
-.item {
-    background-color: $third-color;
-    padding: 1rem;
-    border-radius: 4px;
+            .img-wrap {
+                width: 100%;
+                overflow: hidden;
+                border: 2px $secondary-color solid;
+                border-radius: 4px;
+                @include easeOut;
 
-    .heading-wrap {
-        background-color: $primary-color;
-        padding: .5rem;
-        margin-bottom: 1rem;
-        border-radius: 4px;
-
-        .project-heading {
-            color: $light-color;
-            text-align: center;
-            font-weight: 500;
-            font-size: 2rem;
-        }
-    }
-
-    .description-wrap {
-        padding: .25rem .5rem;
-
-        .description-heading {
-            font-weight: 500;
-            font-size: 1.4rem;
-            margin: .75rem 0;
-        }
-    }
-
-    hr {
-        margin: 1rem 0;
-        border: .25px $light-color solid;
-    }
-
-    .technology-wrap {
-
-        background-color: $secondary-color;
-        padding: .25rem .25rem;
-        margin: 1.5rem 0;
-        border-radius: 4px;
-    
-        .technology-icons {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            .icon-wrap {
-                display: flex;
-                margin: .75rem 1.5rem;
-                align-items: center;
-
-                i {
-                    font-size: 1.5rem;
-                    margin-right: .75rem;
+                &:hover {
+                    border-color: $light-color;
                 }
 
                 img {
-                    width: 22px;
-                    border: none;
-                    border-radius: 0;
-                    opacity: 1;
-                    margin-right: .75rem;
+                    width: 100%;
+                    @include easeOut;
+            
+                    &:hover {
+                        transform: scale(1.3);
+                    }
                 }
-
-                .dotnet-logo {
-                    width: 30px;
+            }
+        
+            .description-wrap {
+                padding: 0 .5rem;
+        
+                .description-heading {
+                    color: #fff;
+                    font-weight: 500;
+                    font-size: 1.4rem;
+                    margin: .5rem 0 .75rem 0;
                 }
-
-                img ~ span {
-                    margin: auto 0;
+            }
+        
+            hr {
+                margin: 1rem 0;
+                border: .25px $light-color solid;
+            }
+        
+            .technology-wrap {
+                color: #fff;
+                background-color: $secondary-color;
+                padding: .25rem .25rem;
+                margin: 1.5rem 0;
+                border-radius: 4px;
+            
+                .technology-icons {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    justify-items: center;
+        
+                    .icon-wrap {
+                        display: flex;
+                        margin: .75rem 1.5rem;
+                        align-items: center;
+        
+                        i {
+                            font-size: 1.5rem;
+                            margin-right: .75rem;
+                        }
+        
+                        & > img {
+                            width: 22px;
+                            border: none;
+                            border-radius: 0;
+                            opacity: 1;
+                            // margin-left: -2px;
+                            margin-right: .75rem;
+                        }
+        
+                        .dotnet-logo {
+                            width: 30px;
+                            // margin-left: -6px;
+                        }
+        
+                        img ~ span {
+                            margin: auto 0;
+                        }
+                    }
                 }
-
             }
         }
     }
 }
+
+
 
 // Contact Page
 .boxes {

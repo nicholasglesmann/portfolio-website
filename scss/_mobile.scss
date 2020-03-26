@@ -12,6 +12,10 @@
 
 // Tablets & Small Laptops
 @include mediaMd {
+    body {
+        overflow: visible;
+    }
+
     body#bg-img {
         background-position-x: 1300px;
     }
@@ -73,8 +77,20 @@
         grid-template-columns: 1fr;
     }
 
-    .projects {
-        grid-template-columns: 1fr;
+    #work {
+        overflow: visible;
+
+        .projects {
+            grid-template-columns: 1fr;
+
+            .item {
+                margin: 0 1rem;
+            }
+
+            &:last-child {
+                margin-bottom: 2rem;
+            }
+        }
     }
 }
 

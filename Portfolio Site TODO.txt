@@ -1,0 +1,46 @@
+Full Site:
+
+ - Possibly add a "Skills" page
+ - Possibly get rid of footer
+ - Possibly make site a single page site
+
+Home Page:
+
+ - Make multiple sizes of home image and load dynamically based on screen size
+ - Possibly tweak "Full Stack Web Developer" heading position
+
+About Page:
+
+ - Write bio using COMM 130 stuff
+ - Write Jobs info section
+ - Restyle jobs info section
+ - Make responsive when finished
+
+Work Page:
+
+ - Get two more projects listed
+ - Make responsive
+ - Make icon images white
+
+Contact Page:
+
+ - Completely redesign
+ - Probably make a contact form
+
+Projects For Site:
+
+ - SMM
+ - Ultra Clean
+ - Snake Game
+ - Bootstrap BlackJack Game
+
+Other Projects on Github:
+
+ - Portfolio Website
+ - Loan Calculator App
+ - Big Pig Game App
+ - 99 Bugs App ?
+ - Tide Prediction App ?
+ - Simon Game
+ - Yahtzee ?
+
