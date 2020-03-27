@@ -173,6 +173,12 @@ main {
     margin: auto; }
   .about-info .bio {
     grid-area: bio; }
+    .about-info .bio h3 {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem; }
+    .about-info .bio p {
+      font-size: 1.1rem; }
   .about-info .job-1 {
     grid-area: job1; }
   .about-info .job-2 {

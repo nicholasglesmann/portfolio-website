@@ -19,8 +19,6 @@ About Page:
 Work Page:
 
  - Get two more projects listed
- - Make responsive
- - Make icon images white
 
 Contact Page:
 

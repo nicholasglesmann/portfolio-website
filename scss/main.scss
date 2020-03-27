@@ -102,6 +102,9 @@ main {
     'job1 job2 job3';
     grid-template-columns: repeat(3, 1fr);
 
+
+
+
     .bio-image {
         grid-area: bioimage;
         margin: auto;
@@ -109,6 +112,16 @@ main {
     
     .bio {
         grid-area: bio;
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
     }
     
     .job-1 {
