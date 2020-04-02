@@ -142,6 +142,11 @@ header {
 .text-third {
   color: #393e46; }
 
+.divider {
+  width: 25%;
+  border-bottom: 1px solid #eeeeee;
+  margin: 1rem auto; }
+
 .portrait {
   width: 250px;
   height: 250px;
@@ -202,49 +207,33 @@ main {
     align-self: end; }
   #about .about-info .empty {
     grid-area: empty; }
+  #about .about-info .experience {
+    background: #2c3440;
+    padding: 0.75rem 1.5rem;
+    border-bottom: #00adb5 5px solid;
+    text-align: center;
+    border-radius: 4px; }
+    #about .about-info .experience h3 {
+      font-size: 1.5rem;
+      font-weight: 600; }
+    #about .about-info .experience h4 {
+      font-weight: 400;
+      font-size: 1.2rem; }
+    #about .about-info .experience h5 {
+      font-size: 0.9rem;
+      margin: 0.25rem 0 0.75rem 0;
+      color: #00adb5; }
+    #about .about-info .experience span {
+      font-weight: bold;
+      color: #00adb5; }
   #about .about-info .education {
-    grid-area: education;
-    background: #2c3440;
-    padding: 0.5rem 1.5rem;
-    border-bottom: #00adb5 5px solid;
-    text-align: center;
-    border-radius: 4px; }
-    #about .about-info .education h3 {
-      font-size: 1.5rem; }
-    #about .about-info .education h4 {
-      font-weight: 400;
-      font-size: 1.2rem; }
-    #about .about-info .education h5 {
-      font-size: 0.9rem;
-      margin: 0.25rem 0 0.75rem 0;
-      color: #00adb5; }
-  #about .about-info .job {
-    background: #2c3440;
-    padding: 0.5rem 1.5rem;
-    border-bottom: #00adb5 5px solid;
-    text-align: center;
-    border-radius: 4px; }
-    #about .about-info .job-1 {
-      grid-area: job1; }
-    #about .about-info .job-2 {
-      grid-area: job2; }
-    #about .about-info .job-3 {
-      grid-area: job3; }
-    #about .about-info .job h2 {
-      font-size: 2rem;
-      color: #00adb5;
-      font-weight: 500; }
-    #about .about-info .job h3 {
-      font-size: 1.5rem; }
-    #about .about-info .job h4 {
-      font-weight: 400;
-      font-size: 1.2rem; }
-    #about .about-info .job h5 {
-      font-size: 0.9rem;
-      margin: 0.25rem 0 0.75rem 0;
-      color: #00adb5; }
-    #about .about-info .job p {
-      margin-bottom: 0.5rem; }
+    grid-area: education; }
+  #about .about-info .job-1 {
+    grid-area: job1; }
+  #about .about-info .job-2 {
+    grid-area: job2; }
+  #about .about-info .job-3 {
+    grid-area: job3; }
 
 #work .projects {
   display: grid;
@@ -416,9 +405,14 @@ main {
     background-color: #222831; }
   .menu .nav-item {
     transform: translate3d(-600px, 0, 0); }
-  .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
-    grid-template-columns: 1fr; }
+  #about {
+    margin: 0 2.5rem; }
+    #about .about-info {
+      grid-template-areas: 'bioimage' 'bio' 'education-title' 'education' 'work-title' 'job1' 'job2' 'job3';
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: auto; }
+      #about .about-info .bio p {
+        padding: 0 1rem; }
   #work {
     overflow: visible;
     padding: 0; }
@@ -450,6 +444,11 @@ main {
     top: 25px; }
   .menu .nav-link {
     font-size: 26px; }
+  #about {
+    margin: 0; }
+    #about .about-info .experience span {
+      display: table;
+      margin: 0.75rem auto 0.15rem auto; }
   #work .projects {
     grid-template-columns: 1fr;
     margin-top: 0; }
@@ -458,10 +457,10 @@ main {
       #work .projects .item .heading-wrap .project-heading {
         font-size: 1.7rem; }
       #work .projects .item .description-wrap {
-        padding: 0 .25rem; }
+        padding: 0 0.25rem; }
         #work .projects .item .description-wrap .description-heading {
           font-size: 1.2rem; }
       #work .projects .item .technology-wrap .technology-icons {
         grid-template-columns: repeat(2, 1fr); }
         #work .projects .item .technology-wrap .technology-icons .icon-wrap {
-          margin: .75rem 0; } }
+          margin: 0.75rem 0; } }

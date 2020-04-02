@@ -11,13 +11,10 @@ Home Page:
 
 About Page:
 
- - Write bio using COMM 130 stuff
- - Write Jobs info section
- - Restyle jobs info section
- - Make responsive when finished
 
 Work Page:
 
+ - Write description for SMM
  - Get two more projects listed
 
 Contact Page:

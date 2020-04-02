@@ -55,6 +55,12 @@ header {
 	color: $third-color;
 }
 
+.divider {
+	width: 25%;
+	border-bottom: 1px solid $light-color;
+	margin: 1rem auto;
+}
+
 .portrait {
 	width: 250px;
 	height: 250px;
@@ -151,16 +157,16 @@ main {
 			grid-area: empty;
 		}
 
-		.education {
-			grid-area: education;
+		.experience {
 			background: lighten($primary-color, 5);
-			padding: 0.5rem 1.5rem;
+			padding: 0.75rem 1.5rem;
 			border-bottom: $secondary-color 5px solid;
 			text-align: center;
 			border-radius: 4px;
 
 			h3 {
 				font-size: 1.5rem;
+				font-weight: 600;
 			}
 
 			h4 {
@@ -173,15 +179,18 @@ main {
 				margin: 0.25rem 0 0.75rem 0;
 				color: $secondary-color;
 			}
+
+			span {
+				font-weight: bold;
+				color: $secondary-color;
+			}
+		}
+
+		.education {
+			grid-area: education;
 		}
 
 		.job {
-			background: lighten($primary-color, 5);
-			padding: 0.5rem 1.5rem;
-			border-bottom: $secondary-color 5px solid;
-			text-align: center;
-			border-radius: 4px;
-
 			&-1 {
 				grid-area: job1;
 			}
@@ -192,31 +201,6 @@ main {
 
 			&-3 {
 				grid-area: job3;
-			}
-
-			h2 {
-				font-size: 2rem;
-				color: $secondary-color;
-				font-weight: 500;
-			}
-
-			h3 {
-				font-size: 1.5rem;
-			}
-
-			h4 {
-				font-weight: 400;
-				font-size: 1.2rem;
-			}
-
-			h5 {
-				font-size: 0.9rem;
-				margin: 0.25rem 0 0.75rem 0;
-				color: $secondary-color;
-			}
-
-			p {
-				margin-bottom: 0.5rem;
 			}
 		}
 	}
