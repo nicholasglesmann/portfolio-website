@@ -391,9 +391,9 @@ main {
     div.menu-branding.show {
       transform: translate3d(0, 0, 0); }
   .portrait {
-    width: 200px;
-    height: 200px;
-    background-position-x: -28px; }
+    width: 220px;
+    height: 220px;
+    background-position-x: -32px; }
   .menu-nav {
     height: 65vh;
     transform: translate3d(-100%, 0, 0);
@@ -411,8 +411,12 @@ main {
       grid-template-areas: 'bioimage' 'bio' 'education-title' 'education' 'work-title' 'job1' 'job2' 'job3';
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: auto; }
+      #about .about-info .bio-image {
+        margin-top: 2.5rem; }
       #about .about-info .bio p {
         padding: 0 1rem; }
+      #about .about-info .title-wrap {
+        margin-top: 2.5rem; }
   #work {
     overflow: visible;
     padding: 0; }
@@ -446,6 +450,12 @@ main {
     font-size: 26px; }
   #about {
     margin: 0; }
+    #about .about-info .bio-image {
+      margin-top: 1.5rem; }
+    #about .about-info .title-wrap {
+      margin-top: 1.5rem; }
+    #about .about-info .experience h4 {
+      margin: 0.25rem 0 0.5rem 0; }
     #about .about-info .experience span {
       display: table;
       margin: 0.75rem auto 0.15rem auto; }

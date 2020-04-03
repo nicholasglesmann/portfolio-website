@@ -11,11 +11,13 @@ Home Page:
 
 About Page:
 
+ - Add onload transitions
 
 Work Page:
 
  - Write description for SMM
  - Get two more projects listed
+ - Add onload transitions
 
 Contact Page:
 
