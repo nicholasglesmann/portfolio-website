@@ -55,6 +55,19 @@ header {
 	color: $third-color;
 }
 
+.mb-1 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+.flex { display: flex; }
+
+
 .divider {
 	width: 25%;
 	border-bottom: 1px solid $light-color;
@@ -109,18 +122,13 @@ main {
 #about {
 	.about-info {
 		display: grid;
-		grid-gap: 30px;
+		grid-gap: 20px;
 		grid-template-areas:
-			'bioimage bio bio'
-			'education-title work-title work-title'
-			'education job1 job2';
+			'bio bio education'
+			'work-title work-title work-title'
+			'job1 job2 job3';
 		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: 3fr 1fr 3fr;
-
-		.bio-image {
-			grid-area: bioimage;
-			margin: auto;
-		}
+		grid-template-rows: 4fr 1fr 3fr;
 
 		.title-wrap {
 			background: lighten($primary-color, 5);
@@ -137,6 +145,13 @@ main {
 
 		.bio {
 			grid-area: bio;
+
+            .portrait {
+                width: 615px;
+                height: 220px;
+                background-position-x: -40px;
+                margin-right: 2rem;
+            }
 
 			p {
 				font-size: 1.1rem;

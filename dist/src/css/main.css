@@ -142,6 +142,21 @@ header {
 .text-third {
   color: #393e46; }
 
+.mb-1 {
+  margin-bottom: 1.5rem; }
+
+.mb-2 {
+  margin-bottom: 2rem; }
+
+.inline {
+  display: inline; }
+
+.inline-block {
+  display: inline-block; }
+
+.flex {
+  display: flex; }
+
 .divider {
   width: 25%;
   border-bottom: 1px solid #eeeeee;
@@ -179,13 +194,10 @@ main {
 
 #about .about-info {
   display: grid;
-  grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'education-title work-title work-title' 'education job1 job2';
+  grid-gap: 20px;
+  grid-template-areas: 'bio bio education' 'work-title work-title work-title' 'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 3fr 1fr 3fr; }
-  #about .about-info .bio-image {
-    grid-area: bioimage;
-    margin: auto; }
+  grid-template-rows: 4fr 1fr 3fr; }
   #about .about-info .title-wrap {
     background: #2c3440;
     padding: 0.5rem 0 0.75rem 0;
@@ -197,6 +209,11 @@ main {
     text-align: center; }
   #about .about-info .bio {
     grid-area: bio; }
+    #about .about-info .bio .portrait {
+      width: 615px;
+      height: 220px;
+      background-position-x: -40px;
+      margin-right: 2rem; }
     #about .about-info .bio p {
       font-size: 1.1rem; }
   #about .about-info .education-title {
