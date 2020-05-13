@@ -298,7 +298,11 @@ main {
                     font-size: 13rem;
                 }
             }
-		}
+        }
+        
+        .education-title {
+            grid-area: education-title;
+        }
 
 		.education {
 			grid-area: education;
