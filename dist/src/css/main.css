@@ -1,5 +1,5 @@
 .menu-btn {
-  position: absolute;
+  position: fixed;
   z-index: 3;
   right: 35px;
   top: 35px;
@@ -23,6 +23,7 @@
 .menu {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   visibility: hidden; }
   .menu.show {
@@ -126,9 +127,10 @@ h3 {
   h2.sm-heading,
   h3.sm-heading {
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
-    padding: 0.2rem 1rem;
-    background: rgba(38, 45, 55, 0.5); }
+    margin-bottom: 1.8rem;
+    padding: 0.2rem 1rem 0.5rem 1rem;
+    background: rgba(38, 45, 55, 0.5);
+    border-radius: 4px; }
 
 a {
   color: #eeeeee;
@@ -166,6 +168,9 @@ header {
 .px-5 {
   padding: auto 5rem; }
 
+.my-auto {
+  margin: auto 0; }
+
 .text-left {
   text-align: left; }
 
@@ -185,13 +190,14 @@ header {
 
 main {
   padding: 0.5rem 4rem;
-  min-height: 100vh; }
+  min-height: 100vh;
+  text-align: center; }
   main .icons {
     display: inline-block;
     margin-top: 1rem;
     pointer-events: all; }
     main .icons a {
-      padding: 0.4rem; }
+      padding: 0.7rem; }
       main .icons a:hover {
         color: #00adb5;
         transition: all 0.5s ease-out; }
@@ -202,6 +208,7 @@ main {
       display: inline-block;
       margin-top: 20vh; }
     main#home h2 {
+      font-size: 2.5rem;
       display: inline-block; }
 
 #about .about-info {
@@ -229,44 +236,10 @@ main {
     color: #eeeeee;
     text-align: center; }
   #about .about-info .bio {
-    grid-area: bio; }
+    grid-area: bio;
+    text-align: left; }
     #about .about-info .bio p {
       font-size: 1.1rem; }
-  #about .about-info .education-title {
-    grid-area: education-title;
-    align-self: end; }
-  #about .about-info .work-title {
-    grid-area: work-title;
-    align-self: end; }
-  #about .about-info .empty {
-    grid-area: empty; }
-  #about .about-info .experience {
-    background: #2c3440;
-    padding: 0.75rem 1.5rem;
-    border-bottom: #00adb5 5px solid;
-    text-align: center;
-    border-radius: 4px; }
-    #about .about-info .experience h3 {
-      font-size: 1.5rem;
-      font-weight: 600; }
-    #about .about-info .experience h4 {
-      font-weight: 400;
-      font-size: 1.2rem; }
-    #about .about-info .experience h5 {
-      font-size: 0.9rem;
-      margin: 0.25rem 0 0.75rem 0;
-      color: #00adb5; }
-    #about .about-info .experience span {
-      font-weight: bold;
-      color: #00adb5; }
-  #about .about-info .education {
-    grid-area: education; }
-  #about .about-info .job-1 {
-    grid-area: job1; }
-  #about .about-info .job-2 {
-    grid-area: job2; }
-  #about .about-info .job-3 {
-    grid-area: job3; }
 
 #experience .experience-info {
   display: grid;
@@ -303,7 +276,8 @@ main {
     padding: 0.75rem 1.5rem;
     border-bottom: #00adb5 5px solid;
     text-align: center;
-    border-radius: 4px; }
+    border-radius: 4px;
+    position: relative; }
     #experience .experience-info .experience ul li {
       margin: .15rem 0; }
     #experience .experience-info .experience h3 {
@@ -319,6 +293,21 @@ main {
     #experience .experience-info .experience span {
       font-weight: bold;
       color: #00adb5; }
+    #experience .experience-info .experience .experience-content {
+      opacity: 0.999999; }
+    #experience .experience-info .experience .icon-background {
+      position: absolute;
+      display: flex;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      opacity: 0.40;
+      color: rgba(55, 65, 79, 0.99); }
+      #experience .experience-info .experience .icon-background i {
+        align-self: center;
+        font-size: 13rem; }
   #experience .experience-info .education {
     grid-area: education; }
   #experience .experience-info .job-1 {
@@ -354,6 +343,7 @@ main {
       overflow: hidden;
       border: 2px #00adb5 solid;
       border-radius: 4px;
+      height: 250px;
       transition: all 0.5s ease-out; }
       #work .projects .item .img-wrap:hover {
         border-color: #eeeeee; }
@@ -362,7 +352,7 @@ main {
         display: block;
         transition: all 0.5s ease-out; }
         #work .projects .item .img-wrap img:hover {
-          transform: scale(1.3); }
+          transform: scale(1.05); }
     #work .projects .item .description-wrap {
       padding: 0 0.5rem; }
       #work .projects .item .description-wrap .description-heading {

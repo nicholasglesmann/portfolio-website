@@ -30,9 +30,10 @@ h3 {
 
 	&.sm-heading {
 		margin-top: 1rem;
-		margin-bottom: 1.5rem;
-		padding: 0.2rem 1rem;
-		background: rgba(lighten($primary-color, 2), 0.5);
+		margin-bottom: 1.8rem;
+		padding: 0.2rem 1rem 0.5rem 1rem;
+        background: rgba(lighten($primary-color, 2), 0.5);
+        border-radius: 4px;
 	}
 }
 
@@ -65,6 +66,8 @@ header {
 .px-4 { padding: auto 4rem; }
 .px-5 { padding: auto 5rem; }
 
+.my-auto { margin: auto 0; }
+
 .text-left { text-align: left;}
 
 
@@ -89,7 +92,8 @@ header {
 main {
 	padding: 0.5rem 4rem;
 	min-height: 100vh;
-	// min-height: calc(100vh - 60px); // 60px is height of footer
+    // min-height: calc(100vh - 60px); // 60px is height of footer
+    text-align: center;
 
 	.icons {
 		display: inline-block;
@@ -97,7 +101,7 @@ main {
 		pointer-events: all;
 
 		a {
-			padding: 0.4rem;
+			padding: 0.7rem;
 
 			&:hover {
 				color: $secondary-color;
@@ -116,6 +120,7 @@ main {
 		}
 
 		h2 {
+            font-size: 2.5rem;
 			display: inline-block;
 		}
 	}
@@ -152,78 +157,19 @@ main {
 		.title {
 			font-size: 2.5rem;
 			font-weight: 500;
-			color: $light-color;
-			text-align: center;
+            color: $light-color;
+            text-align: center;
 		}
 
 		.bio {
-			grid-area: bio;
+            grid-area: bio;
+            text-align: left;
 
 			p {
 				font-size: 1.1rem;
 			}
 		}
 
-		.education-title {
-			grid-area: education-title;
-			align-self: end;
-		}
-
-		.work-title {
-			grid-area: work-title;
-			align-self: end;
-		}
-
-		.empty {
-			grid-area: empty;
-		}
-
-		.experience {
-			background: lighten($primary-color, 5);
-			padding: 0.75rem 1.5rem;
-			border-bottom: $secondary-color 5px solid;
-			text-align: center;
-            border-radius: 4px;
-            
-			h3 {
-				font-size: 1.5rem;
-				font-weight: 600;
-			}
-
-			h4 {
-				font-weight: 400;
-				font-size: 1.2rem;
-			}
-
-			h5 {
-				font-size: 0.9rem;
-				margin: 0.25rem 0 0.75rem 0;
-				color: $secondary-color;
-			}
-
-			span {
-				font-weight: bold;
-				color: $secondary-color;
-			}
-		}
-
-		.education {
-			grid-area: education;
-		}
-
-		.job {
-			&-1 {
-				grid-area: job1;
-			}
-
-			&-2 {
-				grid-area: job2;
-			}
-
-			&-3 {
-				grid-area: job3;
-			}
-		}
 	}
 }
 
@@ -303,13 +249,13 @@ main {
 			border-bottom: $secondary-color 5px solid;
 			text-align: center;
             border-radius: 4px;
+            position: relative;
             
             ul {
                 li {
                     margin: .15rem 0;
                 }
             }
-
 
 			h3 {
 				font-size: 1.5rem;
@@ -330,7 +276,28 @@ main {
 			span {
 				font-weight: bold;
 				color: $secondary-color;
-			}
+            }
+
+            .experience-content {
+                opacity: 0.999999;
+            }
+
+            .icon-background {
+                position: absolute;
+                display: flex;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                justify-content: center;
+                opacity: 0.40;
+                color: lighten($primary-color-clear, 10%);
+
+                i {
+                    align-self: center;
+                    font-size: 13rem;
+                }
+            }
 		}
 
 		.education {
@@ -405,7 +372,8 @@ main {
 			.img-wrap {
 				overflow: hidden;
 				border: 2px $secondary-color solid;
-				border-radius: 4px;
+                border-radius: 4px;
+                    height: 250px;
 				@include easeOut;
 
 				&:hover {
@@ -418,7 +386,7 @@ main {
 					@include easeOut;
 
 					&:hover {
-						transform: scale(1.3);
+						transform: scale(1.05);
 					}
 				}
 			}

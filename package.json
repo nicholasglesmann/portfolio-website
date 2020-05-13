@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/nicholasglesmann/portfolio-website#readme",
   "dependencies": {
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.14.1"
   }
 }
