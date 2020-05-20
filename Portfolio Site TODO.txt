@@ -1,13 +1,10 @@
 Full Site:
 
- - Possibly add a "Skills" page
- - Possibly get rid of footer
  - Possibly make site a single page site
 
 Home Page:
 
  - Make multiple sizes of home image and load dynamically based on screen size
- - Possibly tweak "Full Stack Web Developer" heading position
 
 About Page:
 
@@ -15,8 +12,6 @@ About Page:
 
 Work Page:
 
- - Write description for SMM
- - Get two more projects listed
  - Add onload transitions
 
 Contact Page:

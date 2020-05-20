@@ -451,9 +451,20 @@ main {
   color: #fff;
   height: 60px; }
 
-@media screen and (min-width: 769px) and (max-width: 1170px) {
-  .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  body {
+    overflow-y: visible; }
+  #experience .experience-info {
+    grid-gap: 30px;
+    grid-template-areas: 'work-title work-title' 'job1 job2' 'job1 job2' 'job3 job4' 'job3 job4' 'education-title education-title' 'education education' 'education education' 'experienceimage experienceimage' 'experienceimage experienceimage' 'experienceimage experienceimage';
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr); }
+  #work {
+    overflow-y: visible; }
+    #work .projects {
+      grid-template-columns: repeat(2, 1fr); }
+      #work .projects .item .img-wrap {
+        max-height: 180px; } }
 
 @media screen and (max-width: 768px) {
   body {
@@ -471,7 +482,9 @@ main {
       padding-top: 3vh; }
     main .lg-heading {
       line-height: 1.2;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem; } }
+
+@media screen and (max-width: 768px) and (min-height: 500px) {
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -494,7 +507,18 @@ main {
     transform: translate3d(100%, 0, 0);
     background-color: #222831; }
   .menu .nav-item {
-    transform: translate3d(-600px, 0, 0); }
+    transform: translate3d(-600px, 0, 0); } }
+
+@media screen and (max-width: 768px) and (max-height: 499px) {
+  .menu .portrait {
+    width: 175px;
+    height: 175px;
+    background-position-x: -24px; }
+  .menu .nav-link {
+    font-size: 24px;
+    padding: 0.25rem 0; } }
+
+@media screen and (max-width: 768px) {
   #about {
     margin: 0 2.5rem; }
     #about .about-info {
@@ -551,7 +575,8 @@ main {
   #about {
     margin: 0; }
     #about .about-info .bio-image {
-      margin-top: 1.5rem; }
+      margin-top: 1.5rem;
+      max-width: 90vw; }
     #about .about-info .title-wrap {
       margin-top: 1.5rem; }
     #about .about-info .experience h4 {
@@ -568,6 +593,8 @@ main {
       max-width: 92vw; }
       #work .projects .item .heading-wrap .project-heading {
         font-size: 1.7rem; }
+      #work .projects .item .img-wrap {
+        height: 150px; }
       #work .projects .item .description-wrap {
         padding: 0 0.25rem; }
         #work .projects .item .description-wrap .description-heading {

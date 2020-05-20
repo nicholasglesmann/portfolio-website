@@ -4,9 +4,44 @@
 
 // Desktops & Laptops
 @include mediaLg {
-	.projects {
-		grid-template-columns: repeat(3, 1fr);
-	}
+    body {
+        overflow-y: visible;
+    }
+
+    #experience {
+        .experience-info {
+            grid-gap: 30px;
+            grid-template-areas:  
+            'work-title work-title'
+            'job1 job2'
+            'job1 job2'
+            'job3 job4'
+            'job3 job4'
+            'education-title education-title'
+            'education education'
+            'education education'
+            'experienceimage experienceimage'
+            'experienceimage experienceimage'
+            'experienceimage experienceimage';
+		    grid-template-rows: auto;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    #work {
+        overflow-y: visible;
+
+        .projects {
+            grid-template-columns: repeat(2, 1fr);
+
+            .item {
+                .img-wrap {
+                    max-height: 180px;
+                }
+            }
+        }
+    }
+
 }
 
 // Tablets & Small Laptops
@@ -45,41 +80,66 @@
 		}
 	}
 
-	ul.menu-nav,
-	div.menu-branding {
-		float: none;
-		width: 100%;
-		min-height: 0;
+    // Only modify nav menu position if device is
+    // in portrait mode
+    @media screen and (min-height: 500px) {
+        ul.menu-nav,
+        div.menu-branding {
+            float: none;
+            width: 100%;
+            min-height: 0;
 
-		&.show {
-			transform: translate3d(0, 0, 0);
-		}
-	}
+            &.show {
+                transform: translate3d(0, 0, 0);
+            }
+        }
 
-	.portrait {
-		width: 220px;
-		height: 220px;
-		background-position-x: -32px;
-	}
 
-	.menu {
-		&-nav {
-			height: 65vh;
-			transform: translate3d(-100%, 0, 0);
-			font-size: 2rem;
-			background-color: darken($primary-color, 5);
-		}
+        .portrait {
+            width: 220px;
+            height: 220px;
+            background-position-x: -32px;
+        }
 
-		&-branding {
-			height: 35vh;
-			transform: translate3d(100%, 0, 0);
-			background-color: $primary-color;
-		}
+        .menu {
+            &-nav {
+                height: 65vh;
+                transform: translate3d(-100%, 0, 0);
+                font-size: 2rem;
+                background-color: darken($primary-color, 5);
+            }
 
-		.nav-item {
-			transform: translate3d(-600px, 0, 0);
-		}
-	}
+            &-branding {
+                height: 35vh;
+                transform: translate3d(100%, 0, 0);
+                background-color: $primary-color;
+            }
+
+            .nav-item {
+                transform: translate3d(-600px, 0, 0);
+            }
+        }
+    
+    }
+
+    // Apply some minor changes to nav if device
+    // is in landscape mode
+    @media screen and (max-height: 499px) {
+        .menu {
+            .portrait {
+                width: 175px;
+                height: 175px;
+                background-position-x: -24px;
+            }
+
+
+            .nav-link {
+                font-size: 24px;
+                padding: 0.25rem 0;
+            }
+        }
+    }
+
 
 	#about {
 		margin: 0 2.5rem;
@@ -204,7 +264,8 @@
 
 		.about-info {
 			.bio-image {
-				margin-top: 1.5rem;
+                margin-top: 1.5rem;
+                max-width: 90vw;
 			}
 
 			.title-wrap {
@@ -250,7 +311,11 @@
 					.project-heading {
 						font-size: 1.7rem;
 					}
-				}
+                }
+                
+                .img-wrap {
+                    height: 150px;
+                }
 
 				.description-wrap {
 					padding: 0 0.25rem;
