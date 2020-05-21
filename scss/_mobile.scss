@@ -158,7 +158,8 @@
 			grid-template-rows: auto;
 
 			.bio-image {
-				margin-top: 2.5rem;
+                margin-top: 2.5rem;
+                max-width: 85rem;
 			}
 
 			.bio {
@@ -190,7 +191,7 @@
             grid-template-rows: auto;
             
             .experience-image {
-                max-width: 90vw;
+                max-width: 85vw;
             }
 
             .work-title {
@@ -200,7 +201,7 @@
     }
 
 	#work {
-		overflow: visible;
+		overflow-y: visible;
 		padding: 0;
 
 		.projects {

@@ -9,7 +9,7 @@ let showMenu = false;
 menuBtn.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
-    if(!showMenu) {
+    if (!showMenu) {
         menuBtn.classList.add('close');
         menu.classList.add('show');
         menuNav.classList.add('show');
@@ -24,4 +24,20 @@ function toggleMenu() {
         navItems.forEach(item => item.classList.remove('show'));
         showMenu = false;
     }
+}
+
+window.onload = function () {
+    animateElements();
+};
+
+function animateElements() {
+    let main = document.querySelector('main');
+    let elements = main.querySelectorAll('.animate');
+    let delay = 0;
+    elements.forEach(element => {
+        window.setTimeout(() => {
+            element.classList.add('reset-position');
+        }, delay, element);
+        delay += 110;
+    });
 }
