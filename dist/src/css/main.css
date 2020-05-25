@@ -122,7 +122,9 @@ h3 {
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
-    font-size: 6rem; }
+    font-size: 6rem;
+    transform: translateY(-50vh);
+    transition: transform 0.25s ease-in-out; }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
@@ -130,7 +132,9 @@ h3 {
     margin-bottom: 1.8rem;
     padding: 0.2rem 1rem 0.5rem 1rem;
     background: rgba(38, 45, 55, 0.5);
-    border-radius: 4px; }
+    border-radius: 4px;
+    transform: translateY(100vh);
+    transition: transform 0.5s ease-in-out; }
 
 a {
   color: #eeeeee;
@@ -201,6 +205,15 @@ main {
       main .icons a:hover {
         color: #00adb5;
         transition: all 0.5s ease-out; }
+      main .icons a .github-icon {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out 0.5s; }
+      main .icons a .linkedin-icon {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out 0.75s; }
+      main .icons a .email-icon {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out 1s; }
   main#home {
     overflow: hidden;
     pointer-events: none; }
@@ -225,11 +238,15 @@ main {
     background: url("../../img/about-picturebw2.jpg");
     background-size: cover;
     border-radius: 4px;
-    border: solid 3px #00adb5; }
+    border: solid 3px #00adb5;
+    transform: translateX(-100vw);
+    transition: transform 0.75s ease-in-out; }
   #about .about-info .title-wrap {
     background: #2c3440;
     padding: 0.5rem 0 0.75rem 0;
-    border-radius: 4px; }
+    border-radius: 4px;
+    transform: translateX(100vw);
+    transition: transform 1s ease-in-out; }
   #about .about-info .title {
     font-size: 2.5rem;
     font-weight: 500;
@@ -239,15 +256,14 @@ main {
     grid-area: bio;
     text-align: left; }
     #about .about-info .bio p {
+      position: relative;
       font-size: 1.1rem; }
-
-#experience .lg-heading {
-  transform: translateY(-50vh);
-  transition: transform 0.25s ease-in-out; }
-
-#experience .sm-heading {
-  transform: translateY(100vh);
-  transition: transform 0.5s ease-in-out; }
+    #about .about-info .bio .bio-text-1 {
+      transform: translateX(100vw);
+      transition: transform 1s ease-in-out 0.2s; }
+    #about .about-info .bio .bio-text-2 {
+      transform: translateX(100vw);
+      transition: transform 1s ease-in-out 0.4s; }
 
 #experience .experience-info {
   display: grid;
@@ -419,6 +435,15 @@ main {
             width: 30px; }
           #work .projects .item .technology-wrap .technology-icons .icon-wrap img ~ span {
             margin: auto 0; }
+  #work .projects .project-1 {
+    transform: translateX(100vw);
+    transition: transform 1s ease-out; }
+  #work .projects .project-2 {
+    transform: translateX(100vw);
+    transition: transform 1s ease-out 0.25s; }
+  #work .projects .project-3 {
+    transform: translateX(100vw);
+    transition: transform 1s ease-out 0.5s; }
 
 .boxes {
   display: flex;
@@ -440,6 +465,7 @@ main {
         color: #fff; }
 
 .reset-position {
+  opacity: 1 !important;
   transform: translate(0) rotateY(0) !important; }
 
 .btn, .btn-dark, .btn-light {

@@ -25,7 +25,11 @@ h3 {
 	font-weight: 400;
 
 	&.lg-heading {
-		font-size: 6rem;
+        font-size: 6rem;
+
+        // Initial Position Before Animation
+        transform: translateY(-50vh);
+        transition: transform 0.25s ease-in-out;
 	}
 
 	&.sm-heading {
@@ -34,6 +38,10 @@ h3 {
 		padding: 0.2rem 1rem 0.5rem 1rem;
         background: rgba(lighten($primary-color, 2), 0.5);
         border-radius: 4px;
+
+        // Initial Position Before Animation
+        transform: translateY(100vh);
+        transition: transform 0.5s ease-in-out;
 	}
 }
 
@@ -106,7 +114,22 @@ main {
 			&:hover {
 				color: $secondary-color;
 				@include easeOut();
-			}
+            }
+            
+            .github-icon {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out 0.5s;
+            }
+
+            .linkedin-icon {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out 0.75s;
+            }
+
+            .email-icon {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out 1s;
+            }
 		}
 	}
 
@@ -146,12 +169,16 @@ main {
             background-size: cover;
             border-radius: 4px;
             border: solid 3px $secondary-color;
+            transform: translateX(-100vw);
+            transition: transform 0.75s ease-in-out;
 		}
 
 		.title-wrap {
 			background: lighten($primary-color, 5);
 			padding: 0.5rem 0 0.75rem 0;
-			border-radius: 4px;
+            border-radius: 4px;
+            transform: translateX(100vw);
+            transition: transform 1s ease-in-out;
 		}
 
 		.title {
@@ -166,8 +193,19 @@ main {
             text-align: left;
 
 			p {
-				font-size: 1.1rem;
-			}
+                position: relative;
+                font-size: 1.1rem;
+            }
+            
+            .bio-text-1 {
+                transform: translateX(100vw);
+                transition: transform 1s ease-in-out 0.2s;
+            }
+
+            .bio-text-2 {
+                transform: translateX(100vw);
+                transition: transform 1s ease-in-out 0.4s;
+            }
 		}
 
 	}
@@ -192,17 +230,6 @@ main {
 
 
 #experience {
-    .lg-heading {
-        transform: translateY(-50vh);
-        transition: transform 0.25s ease-in-out;
-    }
-
-    .sm-heading {
-        transform: translateY(100vh);
-        transition: transform 0.5s ease-in-out;
-    }
-
-
 	.experience-info {
 		display: grid;
 		grid-gap: 20px;
@@ -486,7 +513,22 @@ main {
 					}
 				}
 			}
-		}
+        }
+        
+        .project-1 {
+            transform: translateX(100vw);
+            transition: transform 1s ease-out;
+        }
+
+        .project-2 {
+            transform: translateX(100vw);
+            transition: transform 1s ease-out 0.25s;
+        }
+
+        .project-3 {
+            transform: translateX(100vw);
+            transition: transform 1s ease-out 0.5s;
+        }
 	}
 }
 
@@ -520,6 +562,7 @@ main {
 // Transition Styles
 
 .reset-position {
+    opacity: 1 !important;
     transform: translate(0) rotateY(0) !important;
 }
 
