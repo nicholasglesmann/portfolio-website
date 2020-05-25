@@ -506,7 +506,8 @@ main {
 
 @media screen and (min-width: 769px) and (max-width: 1200px) {
   body {
-    overflow-y: visible; }
+    overflow-y: visible;
+    max-width: 100vw; }
   #experience .experience-info {
     grid-gap: 30px;
     grid-template-areas: 'work-title work-title' 'job1 job2' 'job1 job2' 'job3 job4' 'job3 job4' 'education-title education-title' 'education education' 'education education' 'experienceimage experienceimage' 'experienceimage experienceimage' 'experienceimage experienceimage';
@@ -521,7 +522,8 @@ main {
 
 @media screen and (max-width: 768px) {
   body {
-    overflow: visible; }
+    overflow-y: visible;
+    max-width: 100vw; }
   body#bg-img {
     background-position-x: 1300px; }
   h1.sm-heading,
@@ -575,16 +577,21 @@ main {
   #about {
     margin: 0 2.5rem; }
     #about .about-info {
-      grid-template-areas: 'bioimage' 'bio' 'education-title' 'education' 'work-title' 'job1' 'job2' 'job3';
+      grid-template-areas: 'bioimage' 'bio';
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: auto; }
       #about .about-info .bio-image {
         margin-top: 2.5rem;
         max-width: 85rem; }
+      #about .about-info .bio .title-wrap {
+        transform: translateX(-100vw);
+        margin-top: 2.5rem; }
+      #about .about-info .bio .bio-text-1 {
+        transform: translateX(-100vw); }
+      #about .about-info .bio .bio-text-2 {
+        transform: translateX(-100vw); }
       #about .about-info .bio p {
         padding: 0 1rem; }
-      #about .about-info .title-wrap {
-        margin-top: 2.5rem; }
   #experience {
     margin: 0 0.5rem; }
     #experience .experience-info {
@@ -606,12 +613,15 @@ main {
         margin-bottom: 2rem; } }
 
 @media screen and (max-width: 500px) {
+  body {
+    width: 100vw;
+    overflow-x: hidden; }
   body#bg-img {
     background-position-x: 1950px; }
   main {
     padding: 1rem; }
     main#home h1 {
-      margin-top: 25vh; }
+      margin-top: 15vh; }
     main h1 {
       padding-top: 5vh;
       margin-bottom: 2.5rem; }
@@ -626,18 +636,22 @@ main {
     top: 25px; }
   .menu .nav-link {
     font-size: 26px; }
+  #home .sm-heading {
+    font-size: 1.5rem; }
   #about {
     margin: 0; }
-    #about .about-info .bio-image {
-      margin-top: 1.5rem;
-      max-width: 90vw; }
-    #about .about-info .title-wrap {
-      margin-top: 1.5rem; }
-    #about .about-info .experience h4 {
-      margin: 0.25rem 0 0.5rem 0; }
-    #about .about-info .experience span {
-      display: table;
-      margin: 0.75rem auto 0.15rem auto; }
+    #about .about-info {
+      max-width: 80vw; }
+      #about .about-info .bio-image {
+        margin-top: 1.5rem;
+        max-width: 90vw; }
+      #about .about-info .title-wrap {
+        margin-top: 1.5rem; }
+      #about .about-info .experience h4 {
+        margin: 0.25rem 0 0.5rem 0; }
+      #about .about-info .experience span {
+        display: table;
+        margin: 0.75rem auto 0.15rem auto; }
   #experience main h1 {
     margin-top: 0; }
   #work .projects {
