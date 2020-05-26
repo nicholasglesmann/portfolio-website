@@ -6,6 +6,10 @@
     transition: all 0s;
 }
 
+@mixin mobileTranslateX {
+    transform: translateX(-100vw);
+}
+
 @mixin background {
     @if $show-home-image {
         &#bg-img {

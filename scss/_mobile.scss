@@ -160,17 +160,17 @@
 
 			.bio {
                 .title-wrap {
-                    transform: translateX(-100vw);
+                    @include mobileTranslateX();
 				    margin-top: 2.5rem;
                 }
 
                 .bio-text {
                     &-1 {
-                        transform: translateX(-100vw);
+                        @include mobileTranslateX();
                     }
 
                     &-2 {
-                        transform: translateX(-100vw);
+                        @include mobileTranslateX();
                     }
                 }
                 
@@ -201,10 +201,21 @@
             
             .experience-image {
                 max-width: 85vw;
+                @include mobileTranslateX();
+                transition-delay: 0.25s;
             }
 
             .work-title {
                 grid-column: 1;
+                transition-delay: 0.25s;
+            }
+
+            .education-title {
+                @include mobileTranslateX();
+            }
+
+            .education {
+                @include mobileTranslateX();
             }
         }
     }
@@ -217,7 +228,8 @@
 			grid-template-columns: 1fr;
 
 			.item {
-				max-width: 80vw;
+                max-width: 80vw;
+                @include mobileTranslateX();
 			}
 
 			&:last-child {

@@ -281,7 +281,7 @@ main {
     border-radius: 4px;
     border: solid 3px #00adb5;
     transform: translateX(100vw);
-    transition: transform 0.75s ease-in-out; }
+    transition: transform 1s ease-in-out; }
   #experience .experience-info .title-wrap {
     background: #2c3440;
     padding: 0.5rem 0 0.75rem 0;
@@ -437,13 +437,13 @@ main {
             margin: auto 0; }
   #work .projects .project-1 {
     transform: translateX(100vw);
-    transition: transform 1s ease-out; }
+    transition: transform 1s ease-out 0.25s; }
   #work .projects .project-2 {
     transform: translateX(100vw);
-    transition: transform 1s ease-out 0.25s; }
+    transition: transform 1s ease-out 0.5s; }
   #work .projects .project-3 {
     transform: translateX(100vw);
-    transition: transform 1s ease-out 0.5s; }
+    transition: transform 1s ease-out 0.75s; }
 
 .boxes {
   display: flex;
@@ -599,16 +599,24 @@ main {
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: auto; }
       #experience .experience-info .experience-image {
-        max-width: 85vw; }
+        max-width: 85vw;
+        transform: translateX(-100vw);
+        transition-delay: 0.25s; }
       #experience .experience-info .work-title {
-        grid-column: 1; }
+        grid-column: 1;
+        transition-delay: 0.25s; }
+      #experience .experience-info .education-title {
+        transform: translateX(-100vw); }
+      #experience .experience-info .education {
+        transform: translateX(-100vw); }
   #work {
     overflow-y: visible;
     padding: 0; }
     #work .projects {
       grid-template-columns: 1fr; }
       #work .projects .item {
-        max-width: 80vw; }
+        max-width: 80vw;
+        transform: translateX(-100vw); }
       #work .projects:last-child {
         margin-bottom: 2rem; } }
 
