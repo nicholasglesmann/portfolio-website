@@ -28,6 +28,7 @@ function toggleMenu() {
 
 window.onload = function () {
     animateElements();
+    adjustHomePageMobileSize();
 };
 
 function animateElements() {
@@ -40,4 +41,12 @@ function animateElements() {
         }, delay, element);
         delay += 110;
     });
+}
+
+function adjustHomePageMobileSize() {
+    let home = document.getElementById('home');
+    if (home) {
+        console.log('Adjusting home page height...');
+        home.style.height = window.innerHeight;
+    }
 }
