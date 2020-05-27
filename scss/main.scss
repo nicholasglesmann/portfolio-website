@@ -135,7 +135,7 @@ main {
 	&#home {
 		overflow: hidden;
         pointer-events: none;
-        height: 100vh;
+        height: calc(100vh - calc(100vh - 100%));
 
 		h1 {
 			display: inline-block;
