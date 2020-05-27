@@ -16,7 +16,7 @@ body {
 	height: 100%;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	line-height: 1.5;
-	overflow: hidden;
+    overflow: hidden;
 }
 
 h1,
@@ -135,8 +135,8 @@ main {
 	&#home {
 		overflow: hidden;
         pointer-events: none;
-        height: 100vh;
-        height: -webkit-fill-available;
+        height: 100%;
+        // height: -webkit-fill-available;
 
 		h1 {
 			display: inline-block;

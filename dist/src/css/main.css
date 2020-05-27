@@ -217,8 +217,7 @@ main {
   main#home {
     overflow: hidden;
     pointer-events: none;
-    height: 100vh;
-    height: -webkit-fill-available; }
+    height: 100%; }
     main#home h1 {
       display: inline-block;
       margin-top: 20vh; }
