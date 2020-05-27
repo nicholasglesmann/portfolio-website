@@ -134,7 +134,8 @@ main {
 
 	&#home {
 		overflow: hidden;
-		pointer-events: none;
+        pointer-events: none;
+        height: 100vh;
 
 		h1 {
 			display: inline-block;

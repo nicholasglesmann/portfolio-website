@@ -216,7 +216,8 @@ main {
         transition: opacity 0.5s ease-in-out 1s; }
   main#home {
     overflow: hidden;
-    pointer-events: none; }
+    pointer-events: none;
+    height: 100vh; }
     main#home h1 {
       display: inline-block;
       margin-top: 20vh; }
