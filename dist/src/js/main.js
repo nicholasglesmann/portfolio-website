@@ -28,7 +28,7 @@ function toggleMenu() {
 
 window.onload = function () {
     animateElements();
-    //adjustHomePageMobileSize();
+    adjustHomePageMobileSize();
 };
 
 function animateElements() {
