@@ -44,7 +44,7 @@ function animateElements() {
 }
 
 function adjustHomePageMobileSize() {
-    let home = document.getElementById('home');
+    let home = document.getElementById('bg-img');
     if (home) {
         console.log('Adjusting home page height...');
         home.style.height = window.innerHeight;
