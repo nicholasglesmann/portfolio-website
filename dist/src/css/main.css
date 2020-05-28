@@ -92,6 +92,9 @@
   padding: 0;
   box-sizing: border-box; }
 
+html {
+  height: 100%; }
+
 body {
   background: #222831;
   color: #fff;
