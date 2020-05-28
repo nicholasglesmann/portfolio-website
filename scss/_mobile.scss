@@ -247,7 +247,8 @@
     }
 
 	body#bg-img {
-		background-position-x: 1950px;
+        background-position-x: 1950px;
+        height: -webkit-fill-available;
 	}
 
 	main {
