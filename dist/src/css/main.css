@@ -104,7 +104,6 @@ body {
   overflow: hidden; }
   body#bg-img {
     background: url(../../img/code-dark-final.jpg);
-    background-attachment: fixed;
     background-size: cover;
     pointer-events: none;
     z-index: -2;
@@ -631,7 +630,12 @@ main {
     overflow-x: hidden; }
   body#bg-img {
     background-position-x: 1950px;
-    overflow-y: hidden; }
+    overflow-y: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
   main {
     padding: 1rem; }
     main#home h1 {
