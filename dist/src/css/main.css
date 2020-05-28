@@ -628,7 +628,7 @@ main {
     overflow-x: hidden; }
   body#bg-img {
     background-position-x: 1950px;
-    height: -webkit-fill-available; }
+    overflow-y: hidden; }
   main {
     padding: 1rem; }
     main#home h1 {

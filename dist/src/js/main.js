@@ -28,7 +28,7 @@ function toggleMenu() {
 
 window.onload = function () {
     animateElements();
-    adjustHomePageMobileSize();
+    //adjustHomePageMobileSize();
 };
 
 function animateElements() {
@@ -43,10 +43,10 @@ function animateElements() {
     });
 }
 
-function adjustHomePageMobileSize() {
-    let home = document.getElementById('bg-img');
-    if (home) {
-        console.log('Adjusting home page height...');
-        home.style.height = window.innerHeight;
-    }
-}
+// function adjustHomePageMobileSize() {
+//     let home = document.getElementById('bg-img');
+//     if (home) {
+//         console.log('Adjusting home page height...');
+//         home.style.height = window.innerHeight;
+//     }
+// }
