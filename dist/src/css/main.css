@@ -652,6 +652,8 @@ main {
   .menu-btn {
     right: 25px;
     top: 25px; }
+  .menu .menu-nav:first-child {
+    margin-top: -2rem; }
   .menu .nav-link {
     font-size: 26px; }
   #home .sm-heading {

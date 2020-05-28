@@ -287,6 +287,12 @@
 	}
 
 	.menu {
+        // Move menu links up to compensate
+        // for mobile browser address bar
+        .menu-nav:first-child {
+            margin-top: -2rem;
+        }
+
 		.nav-link {
 			font-size: 26px;
 		}
