@@ -31,14 +31,16 @@ h3 {
 	&.lg-heading {
         font-size: 6rem;
 
+        margin-bottom: 1rem;
+
         // Initial Position Before Animation
         transform: translateY(-50vh);
         transition: transform 0.25s ease-in-out;
 	}
 
 	&.sm-heading {
-		margin-top: 1rem;
-		margin-bottom: 1.8rem;
+		// margin-top: 1rem;
+		// margin-bottom: 1.8rem;
 		padding: 0.2rem 1rem 0.5rem 1rem;
         background: rgba(lighten($primary-color, 2), 0.5);
         border-radius: 4px;
@@ -108,7 +110,7 @@ main {
 
 	.icons {
 		display: inline-block;
-		margin-top: 1rem;
+		margin-top: 2.8rem;
 		pointer-events: all;
 
 		a {
@@ -537,11 +539,267 @@ main {
 	}
 }
 
+
+
+#qualifications
+{
+    height: 100vh;
+
+
+
+    .title-wrap {
+        background: lighten($primary-color, 5);
+        padding: 0.5rem 0 0.75rem 0;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+    }
+    
+    .certification-title {
+        grid-column: 1 / 3;
+        transform: translateX(-100vw);
+        transition: transform 1s ease-in-out;
+    }
+
+    .achievements-title {
+        transform: translateX(100vw);
+        transition: transform 1s ease-in-out;
+    }
+
+    .title {
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: $light-color;
+        text-align: center;
+    }
+
+    #certifications-and-achievements {
+        display: grid;
+		grid-gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .qualifications {
+        background: lighten($primary-color, 5);
+        padding: 0.75rem 1.5rem;
+        border-bottom: $secondary-color 5px solid;
+        text-align: center;
+        border-radius: 4px;
+        position: relative;
+            
+        ul {
+            li {
+                margin: .15rem 0;
+            }
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-weight: 400;
+            font-size: 1.2rem;
+        }
+
+        h5 {
+            font-size: 0.9rem;
+            margin: 0.25rem 0 0.75rem 0;
+            color: $secondary-color;
+        }
+
+        span {
+            font-weight: bold;
+            color: $secondary-color;
+        }
+
+        .qualifications-content {
+            opacity: 0.999999;
+        }
+
+        .icon-background {
+            position: absolute;
+            display: flex;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            opacity: 0.40;
+            color: lighten($primary-color-clear, 10%);
+
+            i {
+                align-self: center;
+                font-size: 13rem;
+            }
+        }
+    }
+
+	.certifications {
+		display: grid;
+		grid-gap: 10px;
+        grid-column: 1 / 3;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, 30vh);
+
+		.bio {
+			grid-area: bio;
+
+			p {
+				font-size: 1.1rem;
+			}
+		}
+
+
+
+        .image {
+            // grid-area: qualificationsimage;
+            // margin: auto;
+            // width: auto;
+            background-size: cover;
+            border-radius: 4px;
+            border: solid 3px $secondary-color;
+            transform: translateX(-100vw);
+            transition: transform 1s ease-in-out;
+
+            .round-logo-wrap {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                background-color: white;
+                border-radius: 50%;
+            }
+
+            .salesforce-logo {
+                position:relative;
+                color: #009CD9;
+                height: 100%;
+            }
+
+            .udemy-image {
+                width: 45%;
+            }
+        }
+        
+        .education-title {
+            // grid-area: education-title;
+            transform: translateX(-100vw);
+            transition: transform 0.75s ease-in-out;
+        }
+
+		.education {
+            // grid-area: education;
+            transform: translateX(-100vw);
+            transition: transform 1s ease-in-out;
+		}
+
+		.cert {
+			&-1 {
+                // grid-area: cert1;
+                transform: translateX(-100vw);
+                transition: transform 1s ease-in-out;
+			}
+
+			&-2 {
+                // grid-area: cert2;
+                transform: translateX(-100vw);
+                transition: transform 1s ease-in-out;
+			}
+
+			&-3 {
+                // grid-area: cert3;
+                transform: translateX(-100vw);
+                transition: transform 1s ease-in-out;
+            }
+            
+            &-4 {
+                // grid-area: cert4;
+                transform: translateX(-100vw);
+                transition: transform 1s ease-in-out;
+			}
+
+            &-5 {
+                // grid-area: cert5;
+                transform: translateX(-100vw);
+                transition: transform 1s ease-in-out;
+			}
+
+            &-6 {
+                // grid-area: cert6;
+                transform: translateX(-100vw);
+                transition: transform 1s ease-in-out;
+			}
+		}
+	}
+
+    .achievements {
+        display: grid;
+		grid-gap: 10px;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 30vh);
+
+        .achievement {
+            transform: translateX(100vw);
+            transition: transform 1s ease-in-out;
+        }
+    }
+}
+
+
+.cert-wrap {
+    overflow: hidden;
+    border: 2px $secondary-color solid;
+    border-radius: 4px;
+    height: 100%;
+    @include easeOut;
+
+    &:hover {
+        border-color: $light-color;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+        max-height: 134.04px;
+        @include easeOut;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.badge-wrap {
+    display: contents;
+    height: 100%;
+    max-width: 177.33px;
+    @include easeOut;
+
+    &:hover {
+        border-color: $light-color;
+    }
+
+    a {
+    }
+
+    img {
+        max-height: 134.04px;
+        @include easeOut;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
 // Contact Page
 .boxes {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
+	justify-content: normal;
+    flex-direction: column;
 	align-items: center;
 	margin-top: 1rem;
 
@@ -552,15 +810,15 @@ main {
 		margin-bottom: 3rem;
 		@include easeOut;
 
-		&:hover {
-			padding: 0.5rem 1.5rem;
-			background: $secondary-color;
-			color: set-text-color($secondary-color);
+		// &:hover {
+		// 	padding: 0.5rem 1.5rem;
+		// 	background: $secondary-color;
+		// 	color: set-text-color($secondary-color);
 
-			span {
-				color: set-text-color($secondary-color);
-			}
-		}
+		// 	span {
+		// 		color: set-text-color($secondary-color);
+		// 	}
+		// }
 	}
 }
 

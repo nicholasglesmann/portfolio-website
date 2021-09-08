@@ -43,6 +43,16 @@
         }
     }
 
+    #qualifications {
+        #certifications-and-achievements {
+            grid-template-columns: 1fr;
+
+            .certifications {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 36vh;
+            }
+        }
+    }
 }
 
 // Tablets & Small Laptops
@@ -121,7 +131,6 @@
                 transform: translate3d(-600px, 0, 0);
             }
         }
-    
     }
 
     // Apply some minor changes to nav if device
@@ -138,6 +147,17 @@
             .nav-link {
                 font-size: 24px;
                 padding: 0.25rem 0;
+            }
+        }
+
+        #qualifications {
+            #certifications-and-achievements {
+                grid-template-columns: 1fr;
+
+                .certifications {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 65vh;
+                }
             }
         }
     }
@@ -217,6 +237,10 @@
             .education {
                 @include mobileTranslateX();
             }
+
+            .experience {
+                padding: 0.75rem 0.5rem;
+            }
         }
     }
 
@@ -237,6 +261,16 @@
 			}
 		}
 	}
+
+    #qualifications {
+        #certifications-and-achievements {
+            grid-template-columns: 1fr;
+
+            .certifications {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
 }
 
 // Smartphones
@@ -261,7 +295,7 @@
 
 		&#home h1 {
 			// only the home h1 should be down further
-			margin-top: 15vh;
+			margin-top: 13vh;
 		}
 
 		h1 {
@@ -320,6 +354,9 @@
 			}
 
 			.experience {
+
+                padding: 0.75rem 0.5rem;
+
 				h4 {
 					margin: 0.25rem 0 0.5rem 0;
 				}
@@ -380,4 +417,16 @@
 			}
 		}
 	}
+
+    #qualifications {
+        #certifications-and-achievements {
+            grid-template-columns: 1fr;
+            margin: 0 5vw;
+
+            .certifications {
+                grid-template-columns: 1fr;
+                grid-template-rows: 40vh;
+            }
+        }
+    }
 }
